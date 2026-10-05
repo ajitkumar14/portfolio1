@@ -1,0 +1,841 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajit Kumar | Portfolio</title>
+
+    <style>
+        /* ===== BASIC STYLING ===== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 80px 10%;
+            scroll-margin-top: 70px;
+        }
+
+        /* ===== NAVIGATION ===== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: linear-gradient(90deg, #0f172a, #1e3a8a);
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 15px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+        }
+
+        /* ===== HOME ===== */
+
+        #home {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            background: linear-gradient(
+                135deg,
+                #1e3a8a,
+                #2563eb,
+                #06b6d4
+            );
+        }
+
+        .home-content h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .home-content h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .home-content p {
+            max-width: 650px;
+            margin: auto;
+
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 25px;
+            padding: 12px 25px;
+
+            background: white;
+            color: #1e3a8a;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ===== SECTION TITLE ===== */
+
+        .section-title {
+            text-align: center;
+
+            font-size: 32px;
+
+            margin-bottom: 40px;
+
+            color: #1e3a8a;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about-container {
+            max-width: 900px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-container p {
+            margin-bottom: 15px;
+
+            font-size: 17px;
+        }
+
+        /* ===== EDUCATION ===== */
+
+        .education-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            border-left: 5px solid #2563eb;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateX(8px);
+        }
+
+        .education-card h3 {
+            color: #1e3a8a;
+
+            margin-bottom: 5px;
+        }
+
+        /* ===== PROJECTS ===== */
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #1e3a8a;
+
+            margin-bottom: 10px;
+        }
+
+        .project-card a {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: #2563eb;
+
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            color: #06b6d4;
+        }
+
+        /* ===== RESUME ===== */
+
+        #resume {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dbeafe,
+                    #ecfeff
+                );
+        }
+
+        .resume-btn {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 14px 30px;
+
+            background: #1e3a8a;
+
+            color: white;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .resume-btn:hover {
+            background: #2563eb;
+
+            transform: scale(1.05);
+        }
+
+        /* ===== PROFESSIONAL LINKS ===== */
+
+        .links-container {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .link-card {
+            background: white;
+
+            padding: 18px 30px;
+
+            border-radius: 10px;
+
+            color: #1e3a8a;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .link-card:hover {
+            background: #1e3a8a;
+
+            color: white;
+
+            transform: translateY(-5px);
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact-container {
+            max-width: 700px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-container p {
+            margin: 12px 0;
+
+            font-size: 17px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            text-align: center;
+
+            padding: 20px;
+
+            background: #0f172a;
+
+            color: white;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            .nav-links {
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .home-content h1 {
+                font-size: 40px;
+            }
+
+            .home-content h2 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .nav-links {
+                font-size: 13px;
+
+                gap: 8px;
+            }
+
+            .home-content h1 {
+                font-size: 32px;
+            }
+
+            .about-container,
+            .contact-container {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ===== NAVIGATION MENU ===== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Ajit Kumar
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About Me</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#resume">Resume</a>
+                </li>
+
+                <li>
+                    <a href="#links">Professional Links</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ===== HOME ===== -->
+
+    <section id="home">
+
+        <div class="home-content">
+
+            <h1>
+                Hi, I'm Ajit Kumar
+            </h1>
+
+            <h2>
+                BCA Student & Aspiring Software Developer
+            </h2>
+
+            <p>
+                Welcome to my personal portfolio website.
+                I am interested in programming, software development,
+                and building useful technology projects.
+            </p>
+
+            <a href="#about" class="btn">
+                Explore My Portfolio
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ABOUT ME ===== -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-container">
+
+            <p>
+                Hello! My name is
+                <strong>Ajit Kumar</strong>.
+                I am currently pursuing a
+                Bachelor of Computer Applications (BCA).
+            </p>
+
+            <p>
+                I am developing my skills in programming,
+                software development, databases and
+                problem solving.
+            </p>
+
+            <p>
+                I have been learning Python, SQL, DBMS,
+                C and Java. I enjoy creating projects
+                and improving my technical knowledge.
+            </p>
+
+            <p>
+                My goal is to build strong technical skills
+                and start a successful career in the
+                Information Technology field.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== EDUCATION ===== -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education / Qualification
+        </h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>
+                    Bachelor of Computer Applications (BCA)
+                </h3>
+
+                <p>
+                    <strong>Jharkhand Rai University</strong>
+                </p>
+
+                <p>
+                    Expected Completion: 2027
+                </p>
+
+                <p>
+                    CGPA: 7.55
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Class XII
+                </h3>
+
+                <p>
+                    <strong>NIOS</strong>
+                </p>
+
+                <p>
+                    Year: 2024
+                </p>
+
+                <p>
+                    Percentage: 60%
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Class X
+                </h3>
+
+                <p>
+                    <strong>CBSE</strong>
+                </p>
+
+                <p>
+                    Year: 2021
+                </p>
+
+                <p>
+                    Percentage: 50.8%
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== PROJECTS ===== -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="projects-container">
+
+
+            <div class="project-card">
+
+                <h3>
+                    Number Guessing Game
+                </h3>
+
+                <p>
+                    A simple Python-based game where
+                    the user tries to guess a randomly
+                    generated number.
+                </p>
+
+                <a
+                    href="https://github.com/ajitkumar14"
+                    target="_blank">
+
+                    View on GitHub →
+
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Student Grade Calculator
+                </h3>
+
+                <p>
+                    A Python project that calculates
+                    student grades based on marks
+                    entered by the user.
+                </p>
+
+                <a
+                    href="https://github.com/ajitkumar14"
+                    target="_blank">
+
+                    View on GitHub →
+
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Password Generator
+                </h3>
+
+                <p>
+                    A Python application that generates
+                    random and secure passwords.
+                </p>
+
+                <a
+                    href="https://github.com/ajitkumar14"
+                    target="_blank">
+
+                    View on GitHub →
+
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Expense Tracker
+                </h3>
+
+                <p>
+                    A Python project designed to record
+                    and manage daily expenses.
+                </p>
+
+                <a
+                    href="https://github.com/ajitkumar14"
+                    target="_blank">
+
+                    View on GitHub →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== RESUME ===== -->
+
+    <section id="resume">
+
+        <h2 class="section-title">
+            Resume
+        </h2>
+
+        <p>
+            You can download my resume to learn more
+            about my education, skills and projects.
+        </p>
+
+        <a
+            href="resume.pdf"
+            class="resume-btn"
+            download>
+
+            Download Resume
+
+        </a>
+
+    </section>
+
+
+    <!-- ===== PROFESSIONAL LINKS ===== -->
+
+    <section id="links">
+
+        <h2 class="section-title">
+            Professional Links
+        </h2>
+
+        <div class="links-container">
+
+            <a
+                class="link-card"
+                href="https://github.com/ajitkumar14"
+                target="_blank">
+
+                GitHub
+
+            </a>
+
+
+            <a
+                class="link-card"
+                href="https://www.linkedin.com/in/ajit-kumar-8741a1343/"
+                target="_blank">
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== CONTACT ===== -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-container">
+
+            <p>
+                <strong>Name:</strong>
+                Ajit Kumar
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Dhanbad, Jharkhand, India
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+               ajit19pro@gmail.com
+            </p>
+
+            <p>
+                <strong>GitHub:</strong>
+                github.com/ajitkumar14
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+
+        <p>
+            © 2026 Ajit Kumar. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
